@@ -1,0 +1,845 @@
+/* ==================================================
+   OCTOPÉDIA — Aero Archive Edition
+   Octo Studios
+   Estilo: Frutiger Aero + Windows XP + Gaming
+   Mantém compatibilidade com HTML existente
+   ================================================== */
+
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root {
+
+    --bg-top:#083553;
+    --bg-mid:#0879ad;
+    --bg-bottom:#042b49;
+
+
+    --glass:
+    rgba(255,255,255,0.55);
+
+
+    --glass-light:
+    rgba(255,255,255,0.82);
+
+
+    --text:#07304a;
+
+
+    --text-light:#ffffff;
+
+
+    --accent:#42dcff;
+
+
+    --accent-dark:#008bd1;
+
+
+    --muted:#d9f5ff;
+
+
+    --shadow:
+    0 20px 50px rgba(0,50,90,.35);
+
+
+    --soft-shadow:
+    0 8px 25px rgba(0,40,80,.25);
+
+
+    --radius:24px;
+
+
+    --max-read-width:950px;
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    box-sizing:border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+body {
+
+    margin:0;
+
+
+    min-height:100vh;
+
+
+    font-family:
+    "Segoe UI",
+    "Trebuchet MS",
+    Arial,
+    sans-serif;
+
+
+    color:var(--text);
+
+
+    background:
+
+    linear-gradient(
+        rgba(0,80,130,.35),
+        rgba(0,20,50,.55)
+    ),
+
+    url("assets/frutiger-background.jpg");
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+    background-attachment:fixed;
+
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* brilho ambiente */
+
+body::before {
+
+
+    content:"";
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+    radial-gradient(
+        circle at 20% 10%,
+        rgba(255,255,255,.35),
+        transparent 25%
+    );
+
+
+    pointer-events:none;
+
+}
+
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+
+main {
+
+    max-width:
+    calc(var(--max-read-width) + 60px);
+
+
+    margin:auto;
+
+
+    padding:
+    20px 30px 70px;
+
+}
+
+
+
+.container-center {
+
+
+    max-width:
+    var(--max-read-width);
+
+
+    margin:auto;
+
+}
+
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+
+header {
+
+
+    text-align:center;
+
+
+    padding:
+    45px 25px;
+
+
+    margin-bottom:30px;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.8),
+        rgba(200,245,255,.35)
+    );
+
+
+    backdrop-filter:
+    blur(20px);
+
+
+    border-bottom:
+    1px solid rgba(255,255,255,.8);
+
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+header img {
+
+
+    width:
+    min(200px,35vw);
+
+
+    border-radius:
+    25px;
+
+
+    padding:
+    12px;
+
+
+    background:
+    rgba(255,255,255,.45);
+
+
+    border:
+    2px solid rgba(255,255,255,.8);
+
+
+    box-shadow:
+    0 15px 40px rgba(0,100,180,.35);
+
+}
+
+
+
+
+h1 {
+
+
+    color:white;
+
+
+    font-size:
+    clamp(2rem,5vw,3.2rem);
+
+
+    letter-spacing:
+    .06em;
+
+
+    text-shadow:
+
+    0 3px 12px rgba(0,50,100,.6);
+
+
+}
+
+
+
+header p {
+
+
+    color:white;
+
+
+    font-size:1.1rem;
+
+
+}
+
+
+
+
+/* =========================
+   MENU
+========================= */
+
+
+.menu {
+
+
+    display:flex;
+
+
+    flex-wrap:wrap;
+
+
+    justify-content:center;
+
+
+    gap:15px;
+
+
+    margin:
+    25px 0 35px;
+
+}
+
+
+
+
+.menu a {
+
+
+    text-decoration:none;
+
+}
+
+
+
+
+button {
+
+
+    padding:
+    14px 25px;
+
+
+    border-radius:
+    18px;
+
+
+    border:
+    1px solid rgba(255,255,255,.7);
+
+
+    cursor:pointer;
+
+
+    font-weight:bold;
+
+
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #66eaff,
+        #008bd1
+    );
+
+
+    box-shadow:
+
+    inset 0 3px 8px rgba(255,255,255,.5),
+    0 8px 20px rgba(0,50,100,.35);
+
+
+    transition:.2s;
+
+}
+
+
+
+
+button:hover {
+
+
+    transform:
+    translateY(-4px);
+
+
+    box-shadow:
+
+    0 15px 30px rgba(0,50,100,.45);
+
+}
+
+
+
+
+button:active {
+
+
+    transform:
+    translateY(2px);
+
+}
+
+
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+
+h2,h3 {
+
+
+    color:
+    #00548a;
+
+
+}
+
+
+
+p {
+
+
+    line-height:
+    1.7;
+
+}
+
+
+
+li {
+
+
+    margin-bottom:
+    8px;
+
+}
+
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+
+.secao {
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.75),
+        rgba(230,250,255,.55)
+    );
+
+
+    backdrop-filter:
+    blur(18px);
+
+
+    padding:
+    30px;
+
+
+    margin-bottom:
+    30px;
+
+
+    border-radius:
+    var(--radius);
+
+
+    border:
+    1px solid rgba(255,255,255,.8);
+
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+
+
+/* =========================
+   CARDS
+========================= */
+
+
+.card {
+
+
+    width:100%;
+
+
+    padding:
+    30px;
+
+
+    margin:
+    20px auto;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.8),
+        rgba(210,245,255,.45)
+    );
+
+
+    backdrop-filter:
+    blur(15px);
+
+
+    border-radius:
+    22px;
+
+
+    border:
+    1px solid rgba(255,255,255,.8);
+
+
+    box-shadow:
+    var(--soft-shadow);
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+}
+
+
+
+.card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.45),
+        transparent 40%
+    );
+
+
+    pointer-events:none;
+
+}
+
+
+
+
+.card:hover {
+
+
+    transform:
+    translateY(-5px);
+
+
+    transition:.25s;
+
+
+}
+
+
+
+
+
+.card h2,
+.card h3 {
+
+
+    color:#00639b;
+
+
+}
+
+
+
+.card p,
+.card li {
+
+
+    color:#21485d;
+
+}
+
+
+
+
+/* =========================
+   CAPÍTULOS
+========================= */
+
+
+.chapters {
+
+
+    display:grid;
+
+
+    gap:12px;
+
+}
+
+
+
+
+.chapters a {
+
+
+    padding:
+    15px;
+
+
+    border-radius:
+    15px;
+
+
+    text-decoration:none;
+
+
+    color:#00639b;
+
+
+    background:
+
+    rgba(255,255,255,.55);
+
+
+
+    border:
+    1px solid rgba(0,120,200,.2);
+
+
+    transition:.2s;
+
+
+}
+
+
+
+
+.chapters a:hover {
+
+
+    background:white;
+
+
+    transform:
+    translateX(8px);
+
+}
+
+
+
+
+/* =========================
+   ELEMENTOS FUTUROS
+========================= */
+
+
+.media-frame,
+.timeline,
+.diagram,
+.ficha-tecnica,
+.gallery {
+
+
+    padding:
+    20px;
+
+
+    margin-top:
+    20px;
+
+
+    border-radius:
+    18px;
+
+
+    background:
+
+    rgba(255,255,255,.55);
+
+
+    border:
+    1px solid rgba(255,255,255,.7);
+
+
+    box-shadow:
+    var(--soft-shadow);
+
+}
+
+
+
+
+
+.badge {
+
+
+    display:inline-block;
+
+
+    padding:
+    6px 12px;
+
+
+    border-radius:
+    15px;
+
+
+    background:
+    var(--accent);
+
+
+    color:#003c60;
+
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+.small-muted {
+
+
+    color:
+    #557b90;
+
+}
+
+
+
+
+
+.escondido {
+
+
+    display:none;
+
+}
+
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+
+
+    text-align:center;
+
+
+    padding:
+    25px;
+
+
+    margin-top:
+    40px;
+
+
+    color:white;
+
+
+    background:
+
+    rgba(255,255,255,.25);
+
+
+    backdrop-filter:
+    blur(15px);
+
+
+    border-radius:
+    20px;
+
+}
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:720px){
+
+
+    main {
+
+        padding:
+        15px;
+
+    }
+
+
+    header {
+
+        padding:
+        30px 15px;
+
+    }
+
+
+    .card,
+    .secao {
+
+        padding:
+        20px;
+
+    }
+
+
+    button {
+
+        width:100%;
+
+    }
+
+}

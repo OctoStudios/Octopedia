@@ -1,0 +1,319 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Capítulo 1 - As Primeiras Lendas</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="../assets/Concept logo 2.png" alt="Octo Studios">
+
+<h1>
+Capítulo 1 — As Primeiras Lendas (1996–2009)
+</h1>
+
+<p>
+Octopédia Gamer
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<a href="index.html">
+Voltar aos capítulos
+</a>
+
+
+
+
+<section class="card">
+
+<h2>
+Introdução
+</h2>
+
+
+<p>
+Toda coleção possui um ponto de partida. Algumas começam
+com raridades valiosas, outras com itens de colecionador
+difíceis de encontrar. A Octopédia nasceu de uma ideia
+diferente: preservar experiências, memórias e fragmentos
+da história dos videogames que marcaram diferentes gerações.
+</p>
+
+
+<p>
+Este primeiro capítulo cobre o período entre 1996 e 2009,
+uma era de grandes transformações na indústria.
+Foi o tempo em que os jogos tridimensionais se consolidaram,
+as franquias modernas surgiram, os mundos abertos começaram
+a dominar o mercado e os consoles passaram a alcançar
+públicos cada vez maiores.
+</p>
+
+
+<p>
+Os jogos apresentados neste capítulo fazem parte da coleção
+preservada pela Octo Studios e representam o início da linha
+do tempo da Octopédia.
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="games">
+
+
+
+
+
+<div class="card game">
+
+
+<h2>
+Pokémon Red, Blue e Green (1996–1998)
+</h2>
+
+
+<p>
+Poucas franquias alcançaram o impacto cultural de Pokémon.
+Lançados originalmente para Game Boy, Pokémon Red, Blue e
+Green apresentaram ao mundo uma fórmula simples e genial:
+explorar um mundo, capturar criaturas, treiná-las e construir
+uma equipe própria.
+</p>
+
+
+<p>
+O sucesso foi imediato. Crianças e adolescentes passaram a
+trocar monstros, estratégias e histórias, criando uma das
+maiores comunidades da história dos videogames.
+</p>
+
+
+<h3>
+Importância histórica
+</h3>
+
+<p>
+Marco fundamental dos RPGs portáteis.
+</p>
+
+
+<h3>
+Importância para a coleção
+</h3>
+
+<p>
+Representa o início cronológico da linha do tempo preservada
+pela Octopédia.
+</p>
+
+
+<h3>
+Veja também
+</h3>
+
+<p>
+SNESticle PT-BR
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card game">
+
+
+<h2>
+Tomb Raider (1996)
+</h2>
+
+
+<p>
+Representado por Tomb Raider: Anniversary.
+</p>
+
+
+<p>
+Quando Lara Croft surgiu pela primeira vez, a indústria ainda
+explorava os limites dos gráficos tridimensionais.
+Tomb Raider ajudou a definir o gênero de aventura e exploração
+em ambientes 3D.
+</p>
+
+
+<p>
+O jogo combinava exploração, plataformas, combate e resolução
+de enigmas em uma escala inédita para a época.
+</p>
+
+
+<h3>
+Importância histórica
+</h3>
+
+<p>
+Um dos pilares da era tridimensional.
+</p>
+
+
+<h3>
+Importância para a coleção
+</h3>
+
+<p>
+Representa uma das personagens mais influentes dos videogames.
+</p>
+
+
+<h3>
+Veja também
+</h3>
+
+<p>
+Tomb Raider Anniversary<br>
+Tomb Raider Underworld
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card game">
+
+
+<h2>
+LEGO Racers 2 (2001)
+</h2>
+
+
+<p>
+Antes da era das adaptações cinematográficas da LEGO,
+LEGO Racers 2 apresentou uma experiência focada em velocidade,
+exploração e criatividade.
+</p>
+
+
+<p>
+Os jogadores podiam construir veículos personalizados e
+explorar diferentes regiões inspiradas nos brinquedos da empresa.
+</p>
+
+
+<h3>
+Importância histórica
+</h3>
+
+<p>
+Uma das primeiras experiências digitais marcantes da LEGO.
+</p>
+
+
+<h3>
+Importância para a coleção
+</h3>
+
+<p>
+Primeiro representante da linha LEGO na cronologia da Octopédia.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card game">
+
+
+<h2>
+Scooby-Doo! Mystery Mayhem (2003)
+</h2>
+
+
+<p>
+Baseado na famosa série animada, Mystery Mayhem coloca
+Scooby-Doo e Salsicha em investigações sobrenaturais
+repletas de humor e mistério.
+</p>
+
+
+<p>
+O jogo captura com fidelidade o espírito do desenho original
+e se tornou uma lembrança importante para muitos jogadores
+da geração PlayStation 2.
+</p>
+
+
+<h3>
+Importância histórica
+</h3>
+
+<p>
+Representante da era de ouro dos jogos licenciados.
+</p>
+
+
+<h3>
+Importância para a coleção
+</h3>
+
+<p>
+Um dos símbolos da infância preservados pela Octopédia.
+</p>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+</main>
+
+
+<script src="../app.js"></script>
+
+
+</body>
+
+</html>
+```
