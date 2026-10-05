@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octopédia - Acervo Digital de Videogames</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Octopédia: Acervo digital colaborativo estilo Wikipedia dedicado à preservação da história dos videogames.">
+</head>
+<body>
+
+<!-- Bolhas decorativas -->
+<div class="bubble bubble-1" style="background: rgba(32, 201, 201, 0.2);"></div>
+<div class="bubble bubble-2" style="background: rgba(32, 201, 201, 0.15);"></div>
+<div class="bubble bubble-3" style="background: rgba(32, 201, 201, 0.1);"></div>
+<div class="bubble bubble-4" style="background: rgba(32, 201, 201, 0.15);"></div>
+<div class="bubble bubble-5" style="background: rgba(32, 201, 201, 0.12);"></div>
+
+<header>
+    <div class="navbar">
+        <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+            <img src="assets/Concept logo 2.png" alt="Octopédia" style="width: 50px; height: 50px; border-radius: 10px;">
+            <h1 style="margin: 0; color: #0c5460; font-size: 1.8em;">📚 Octopédia</h1>
+        </div>
+        <nav class="nav-menu" style="display: flex; gap: 15px;">
+            <a href="#" onclick="scrollToSection('sobre')" style="text-decoration: none; color: #0c5460; font-weight: 600; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(32,201,201,0.2)'" onmouseout="this.style.background='transparent'">Sobre</a>
+            <a href="#" onclick="openModal('contribuir-modal')" style="text-decoration: none; color: #0c5460; font-weight: 600; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(32,201,201,0.2)'" onmouseout="this.style.background='transparent'">Contribuir</a>
+            <a href="#" onclick="openModal('colecoes-modal')" style="text-decoration: none; color: #0c5460; font-weight: 600; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(32,201,201,0.2)'" onmouseout="this.style.background='transparent'">Minha Coleção</a>
+        </nav>
+        <div class="user-section" style="display: flex; gap: 10px;"></div>
+    </div>
+    
+    <div style="text-align: center; padding: 20px 0;">
+        <h1 style="color: #0c5460; font-size: 2.5em; margin: 10px 0;">Octopédia</h1>
+        <p style="color: #666; font-size: 1.1em; margin: 5px 0;">🎮 Acervo Digital Colaborativo - Preservação da História dos Videogames</p>
+        <p style="color: #999; font-size: 0.95em;">Uma Wikipedia para gamers: Compartilhe suas coleções, conhecimento e memórias</p>
+    </div>
+</header>
+
+<main>
+
+<!-- Barra de Pesquisa -->
+<div style="max-width: 800px; margin: 30px auto;">
+    <div style="display: flex; gap: 10px;">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="🔍 Pesquise jogos, consoles, desenvolvedoras..." 
+            onkeyup="performSearch(this.value)"
+            style="flex: 1; padding: 15px; border-radius: 25px; border: 2px solid rgba(32, 201, 201, 0.3); background: rgba(255, 255, 255, 0.9); font-size: 1em;"
+        >
+        <button onclick="openModal('filtros-modal')" style="padding: 12px 25px; border-radius: 25px; border: 2px solid rgba(32, 201, 201, 0.5); background: rgba(32, 201, 201, 0.15); cursor: pointer; font-weight: 600; color: #0c5460;">⚙️ Filtros</button>
+    </div>
+</div>
+
+<!-- Resultados de Pesquisa -->
+<div id="searchResults" style="display: none; max-width: 1000px; margin: 30px auto; padding: 20px;">
+    <h2 style="color: #0c5460; margin-top: 0;">Resultados da Pesquisa</h2>
+    <div id="searchResultsList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;"></div>
+</div>
+
+<!-- Seção Principal -->
+<section class="intro" style="max-width: 1000px; margin: 40px auto;">
+    <div class="card">
+        <h2>📖 Bem-vindo à Octopédia</h2>
+        <p>
+            A Octopédia é um acervo digital colaborativo dedicado à preservação da história dos videogames. 
+            Como uma Wikipedia para gamers, qualquer pessoa pode contribuir com artigos, fotos de suas coleções, 
+            comentários e conhecimento sobre consoles, jogos e tecnologias que definiram a indústria.
+        </p>
+        <p>
+            <strong>Nossos Pilares:</strong> Preservação • Comunidade • Conhecimento Livre • Nostalgia
+        </p>
+    </div>
+</section>
+
+<!-- Estatísticas -->
+<section style="max-width: 1000px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+    <div class="card" style="text-align: center;">
+        <h3 style="margin-top: 0; color: #0c5460;">📚 Artigos</h3>
+        <p style="font-size: 2em; color: #20c9c9; margin: 10px 0; font-weight: bold;" id="statsArticles">0</p>
+        <p style="color: #999; margin: 0;">Artigos no acervo</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h3 style="margin-top: 0; color: #0c5460;">👥 Contribuidores</h3>
+        <p style="font-size: 2em; color: #20c9c9; margin: 10px 0; font-weight: bold;" id="statsContributors">0</p>
+        <p style="color: #999; margin: 0;">Membros ativos</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h3 style="margin-top: 0; color: #0c5460;">💬 Comentários</h3>
+        <p style="font-size: 2em; color: #20c9c9; margin: 10px 0; font-weight: bold;" id="statsComments">0</p>
+        <p style="color: #999; margin: 0;">Interações</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h3 style="margin-top: 0; color: #0c5460;">🎮 Coleções</h3>
+        <p style="font-size: 2em; color: #20c9c9; margin: 10px 0; font-weight: bold;" id="statsCollections">0</p>
+        <p style="color: #999; margin: 0;">Itens compartilhados</p>
+    </div>
+</section>
+
+<!-- Grid de Artigos -->
+<section style="max-width: 1200px; margin: 40px auto;">
+    <h2 style="color: #0c5460; text-align: center; font-size: 1.8em;">📰 Artigos Recentes</h2>
+    <div id="articlesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;">
+        <!-- Artigos carregados aqui -->
+    </div>
+</section>
+
+<!-- Seção de Coleções -->
+<section style="max-width: 1200px; margin: 60px auto;">
+    <h2 style="color: #0c5460; text-align: center; font-size: 1.8em;">🎪 Coleções em Destaque</h2>
+    <div id="collectionsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;">
+        <!-- Coleções carregadas aqui -->
+    </div>
+</section>
+
+<!-- Seção de Comunidade -->
+<section style="max-width: 1000px; margin: 60px auto;">
+    <div class="card" style="background: linear-gradient(135deg, rgba(32, 201, 201, 0.1), rgba(0, 132, 163, 0.05));">
+        <h2 style="color: #0c5460;">👥 Junte-se à Comunidade</h2>
+        <p>
+            A Octopédia é um projeto colaborativo que depende de contribuidores como você. Compartilhe seus conhecimentos,
+            fotos de suas coleções, histórias e experiências com a comunidade gaming.
+        </p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+            <button onclick="openModal('contribuir-modal')" style="padding: 12px 30px; border-radius: 20px; border: none; background: linear-gradient(180deg, #20c9c9, #0084a3); color: white; cursor: pointer; font-weight: 600; font-size: 1em;">✍️ Criar Artigo</button>
+            <button onclick="openModal('colecoes-modal')" style="padding: 12px 30px; border-radius: 20px; border: 2px solid #20c9c9; background: transparent; color: #0c5460; cursor: pointer; font-weight: 600; font-size: 1em;">📸 Compartilhar Coleção</button>
+            <button onclick="openModal('login-modal')" style="padding: 12px 30px; border-radius: 20px; border: 2px solid #20c9c9; background: transparent; color: #0c5460; cursor: pointer; font-weight: 600; font-size: 1em;">👤 Criar Conta</button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- MODAIS -->
+
+<!-- Modal: Criar/Editar Artigo -->
+<div id="contribuir-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('contribuir-modal')">&times;</span>
+        <h2>✍️ Criar Novo Artigo</h2>
+        <form onsubmit="saveArticle(event)" id="articleForm">
+            <input type="text" id="artTitle" placeholder="Título do artigo" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <input type="text" id="artCategory" placeholder="Categoria (ex: Consoles, Jogos, Desenvolvedoras)" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <textarea id="artContent" placeholder="Conteúdo do artigo..." required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; min-height: 200px;"></textarea>
+            <input type="text" id="artTags" placeholder="Tags (separadas por vírgula)" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button type="submit" style="flex: 1; padding: 12px; border-radius: 8px; border: none; background: #20c9c9; color: white; cursor: pointer; font-weight: 600;">📤 Publicar Artigo</button>
+                <button type="button" onclick="closeModal('contribuir-modal')" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ddd; background: white; cursor: pointer; font-weight: 600;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal: Compartilhar Coleção -->
+<div id="colecoes-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('colecoes-modal')">&times;</span>
+        <h2>📸 Compartilhar Sua Coleção</h2>
+        <form onsubmit="saveCollection(event)" id="collectionForm">
+            <input type="text" id="collName" placeholder="Nome da coleção (ex: Meu Acervo de PS2)" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <select id="collType" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+                <option value="">Selecione o tipo...</option>
+                <option value="Consoles">Consoles</option>
+                <option value="Jogos">Jogos</option>
+                <option value="Acessórios">Acessórios</option>
+                <option value="Memorabilia">Memorabilia</option>
+                <option value="Revistas">Revistas/Guias</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <input type="number" id="collQuantity" placeholder="Quantidade de itens" min="1" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <textarea id="collDescription" placeholder="Descrição da sua coleção..." required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; min-height: 150px;"></textarea>
+            <label style="display: block; margin: 15px 0;">
+                <input type="file" id="collImage" accept="image/*" style="cursor: pointer;">
+                <span style="color: #666;">Adicionar foto (opcional)</span>
+            </label>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button type="submit" style="flex: 1; padding: 12px; border-radius: 8px; border: none; background: #20c9c9; color: white; cursor: pointer; font-weight: 600;">📤 Compartilhar Coleção</button>
+                <button type="button" onclick="closeModal('colecoes-modal')" style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ddd; background: white; cursor: pointer; font-weight: 600;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal: Filtros -->
+<div id="filtros-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('filtros-modal')">&times;</span>
+        <h2>⚙️ Filtros</h2>
+        <div style="display: grid; gap: 15px;">
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="filterConsoles" onchange="applyFilters()">
+                <span>Consoles</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="filterJogos" onchange="applyFilters()">
+                <span>Jogos</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="filterDesenvolvedoras" onchange="applyFilters()">
+                <span>Desenvolvedoras</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="filterTecnologia" onchange="applyFilters()">
+                <span>Tecnologia</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="filterHistoria" onchange="applyFilters()">
+                <span>História</span>
+            </label>
+        </div>
+        <button onclick="clearFilters()" style="width: 100%; margin-top: 20px; padding: 12px; border-radius: 8px; border: 1px solid #ddd; background: white; cursor: pointer; font-weight: 600;">Limpar Filtros</button>
+    </div>
+</div>
+
+<!-- Modal: Login/Cadastro (será substituído por Firebase) -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('login-modal')">&times;</span>
+        <h2>👤 Criar Conta / Login</h2>
+        <p style="color: #666; text-align: center;">Crie uma conta para contribuir com artigos e compartilhar suas coleções</p>
+        <form onsubmit="handleLocalLogin(event)" style="margin-top: 20px;">
+            <input type="email" id="loginEmail" placeholder="Email" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <input type="password" id="loginPassword" placeholder="Senha (mín. 6 caracteres)" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+            <button type="submit" style="width: 100%; padding: 12px; margin-top: 15px; border-radius: 8px; border: none; background: #20c9c9; color: white; cursor: pointer; font-weight: 600;">Criar Conta</button>
+        </form>
+        <p style="text-align: center; color: #999; font-size: 0.9em; margin-top: 15px;">
+            Nota: Integraremos Firebase em breve para autenticação segura via Google e GitHub
+        </p>
+    </div>
+</div>
+
+<!-- Modal: Artigo Detalhado -->
+<div id="article-detail-modal" class="modal">
+    <div class="modal-content" style="max-width: 800px;">
+        <span class="close" onclick="closeModal('article-detail-modal')">&times;</span>
+        <div id="articleDetailContent"></div>
+    </div>
+</div>
+
+<footer>
+    <div style="text-align: center;">
+        <p>
+            <strong>Octopédia © 2026</strong> - Acervo Digital Colaborativo
+        </p>
+        <p style="color: #999; font-size: 0.9em;">
+            Preservando a história dos videogames, uma memória por vez. • 
+            <a href="#" style="color: #0084a3; text-decoration: none;">Sobre</a> • 
+            <a href="#" style="color: #0084a3; text-decoration: none;">Contribuir</a> • 
+            <a href="#" style="color: #0084a3; text-decoration: none;">Privacidade</a>
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="app-wiki.js"></script>
+</body>
+</html>
