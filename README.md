@@ -23,10 +23,33 @@ da cultura gamer.
 ```text
 Octopedia/
 ├── archive/
+├── chapters/
 ├── consoles/
-├── cheapters/
 ├── history/
 ├── assets/
+├── about.html
 ├── app.js
+├── app-wiki.js
+├── firebase-config.js
+├── firebase-auth.js
+├── firebase-comments.js
 ├── index.html
-└── style.css
+├── index-wiki.html
+├── INSTALACAO_FIREBASE.md
+├── README.md
+├── style.css
+└── .github/
+```
+
+## 🔗 Navegação principal
+
+- `index.html` — página inicial da enciclopédia
+- `about.html` — apresentação do projeto
+- `chapters/index.html` — biblioteca de capítulos
+- `consoles/index.html` — consoles e plataformas
+- `history/index.html` — linha do tempo e eras
+- `archive/index.html` — preservação e arquivologia
+
+## ▶️ Como executar
+
+Abra o arquivo `index.html` em um navegador moderno ou sirva o projeto com um servidor local simples.
